@@ -39,37 +39,13 @@
         <a class="btn btn-ghost" href="#products">Productsを見る</a>
       </div>
     </div>
-    <!-- Hero Illustrationは暫定Draft（CEO正式Visual Asset受領後に差し替え予定）。.hero-art内のsvgのみ差し替えれば良い構造 -->
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#A7BFA6" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#A7BFA6" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#F6A3A5" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#F6A3A5" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="230" cy="180" r="180" fill="url(#blob1)"/>
-        <circle cx="150" cy="260" r="130" fill="url(#blob2)"/>
-        <path d="M200 380 C190 300 210 240 200 160" stroke="#7E9A7D" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M200 320 C220 310 235 290 230 270 C210 275 195 295 200 320Z" fill="#A7BFA6"/>
-        <path d="M198 260 C178 250 163 230 168 210 C188 215 203 235 198 260Z" fill="#A7BFA6" opacity="0.85"/>
-        <path d="M202 200 C222 192 235 174 228 156 C210 160 197 178 202 200Z" fill="#A7BFA6" opacity="0.7"/>
-        <g transform="translate(200,120)">
-          <circle cx="-18" cy="-4" r="22" fill="#F6A3A5" opacity="0.85"/>
-          <circle cx="14" cy="-14" r="24" fill="#F05F62" opacity="0.9"/>
-          <circle cx="18" cy="14" r="20" fill="#F6A3A5" opacity="0.8"/>
-          <circle cx="-10" cy="20" r="18" fill="#D9A45B" opacity="0.55"/>
-          <circle cx="2" cy="2" r="12" fill="#FFF8F3"/>
-        </g>
-        <path d="M255 90 C260 78 252 68 244 64 C248 76 240 82 240 92 C240 100 248 104 255 100 C258 96 258 92 255 90Z" fill="#D9A45B" opacity="0.85"/>
-        <circle cx="90" cy="90" r="3" fill="#F05F62" opacity="0.5"/>
-        <circle cx="320" cy="260" r="4" fill="#A7BFA6" opacity="0.5"/>
-        <circle cx="70" cy="220" r="2.5" fill="#D9A45B" opacity="0.6"/>
-      </svg>
+    <!-- Hero Visual：CEO制作の正式Brand Asset（ボタニカルイラスト）。画像自体は無加工、CSS maskで背景へ自然に溶け込ませている -->
+    <div class="hero-art">
+      <picture>
+        <source type="image/webp" srcset="/assets/hero-visual-sm.webp 800w, /assets/hero-visual.webp 1400w" sizes="(max-width: 860px) 92vw, 46vw">
+        <source type="image/jpeg" srcset="/assets/hero-visual-sm.jpg 800w, /assets/hero-visual.jpg 1400w" sizes="(max-width: 860px) 92vw, 46vw">
+        <img src="/assets/hero-visual.jpg" alt="" class="hero-visual" width="1400" height="933" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 </section>
