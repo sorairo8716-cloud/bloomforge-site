@@ -19,6 +19,14 @@
   --surface: #ffffff;
   --border: #EFDFD3;
   --shadow: 0 12px 32px -16px rgba(76, 58, 51, 0.18);
+
+  /* Typography System（2026-08-12追加）:
+     英字Hero/英字Section Heading = Cormorant Garamond
+     日本語Hero/Mission/Vision等の大きなブランドコピー = Noto Serif JP
+     本文/Navigation/Button/Product Description/UI = Noto Sans JP */
+  --font-en-serif: "Cormorant Garamond", Georgia, "Hiragino Mincho ProN", serif;
+  --font-jp-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,17 +48,23 @@ body {
   margin: 0;
   background: var(--ivory);
   color: var(--brown);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.9;
   font-size: 16px;
   overflow-x: hidden;
 }
 
-h1, h2, h3, .serif {
-  font-family: Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif;
+/* 日本語の大きなブランドコピー（Hero見出し・Section見出し・Mission/Vision本文） */
+h1, h2.section-title, .mv-block .statement, .contact-band h2 {
+  font-family: var(--font-jp-serif);
   font-weight: 700;
   color: var(--brown);
   letter-spacing: 0.01em;
+}
+
+/* 英字のHero/Section Heading（英語の見出し語・Product名） */
+.eyebrow, .product-body h3, .brand-name {
+  font-family: var(--font-en-serif);
 }
 
 .eyebrow {
@@ -93,9 +107,10 @@ header.site .bar {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.9rem 1.5rem; max-width: 1080px; margin: 0 auto; gap: 1rem;
 }
-.brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; }
-.brand-mark { width: 30px; height: 30px; }
-.brand-name { font-family: Georgia, "Hiragino Mincho ProN", serif; font-weight: 700; font-size: 1.15rem; color: var(--brown); }
+/* Brand：正式横長ワードマーク（透明背景）を基本使用。CSS/Web Fontでの再現はしない */
+.brand { display: flex; align-items: center; text-decoration: none; }
+.brand-wordmark { height: 34px; width: auto; }
+.brand-icon-only { display: none; height: 30px; width: auto; }
 nav.site { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
 nav.site a { color: var(--brown-soft); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
 nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
@@ -192,8 +207,10 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
   display: flex; align-items: center; justify-content: center;
 }
 .value-icon svg { width: 30px; height: 30px; stroke: var(--coral); }
-.value-card .en { font-family: Georgia, "Hiragino Mincho ProN", serif; font-weight: 700; font-size: 1.02rem; margin: 0 0 0.4rem; }
-.value-card .jp { font-size: 0.92rem; color: var(--brown-soft); margin: 0; }
+/* value-lead: Value本文の1行目（英語のValue 1のみCormorant Garamond、他は日本語のためNoto Serif JP） */
+.value-card .value-lead { font-family: var(--font-jp-serif); font-weight: 700; font-size: 1.02rem; margin: 0 0 0.4rem; }
+.value-card .value-lead[lang="en"] { font-family: var(--font-en-serif); }
+.value-card .value-sub { font-family: var(--font-sans); font-size: 0.92rem; color: var(--brown-soft); margin: 0; }
 
 /* ---------- Company ---------- */
 .company-section { position: relative; }
@@ -221,10 +238,9 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
 /* ---------- Footer ---------- */
 footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margin-top: 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 2.5rem; }
-.footer-brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-bottom: 0.7rem; }
-.footer-brand .brand-mark { width: 26px; height: 26px; }
-.footer-brand .brand-name { font-size: 1.05rem; }
-.footer-tagline { color: var(--brown-soft); font-size: 0.88rem; max-width: 28ch; }
+.footer-brand { display: flex; align-items: center; text-decoration: none; margin-bottom: 0.9rem; }
+.footer-brand .brand-wordmark { height: 30px; width: auto; }
+.footer-tagline { font-family: var(--font-sans); color: var(--brown-soft); font-size: 0.88rem; max-width: 28ch; }
 .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-soft); margin: 0 0 0.9rem; font-weight: 600; }
 .footer-col a { display: block; color: var(--brown); text-decoration: none; font-size: 0.92rem; margin-bottom: 0.6rem; }
 .footer-col a:hover { color: var(--coral); }
@@ -273,4 +289,11 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
   .mv-block p.statement { font-size: 1.2rem; }
   .values-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .brand-wordmark { height: 28px; }
+}
+
+/* 極小幅端末のみ、横長ワードマーク→正式ロゴマーク単体へ切替（指示どおり「横幅上問題がある場合のみ」の限定対応） */
+@media (max-width: 360px) {
+  .brand-wordmark { display: none; }
+  .brand-icon-only { display: block; }
 }
