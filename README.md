@@ -34,3 +34,10 @@ CEO指示「Bloomforge Group公式サイト再設計 — Corporate Website化」
 Corporate Website構成へ再設計した。GitHubへの主要導線（Header/Hero/Products内）は削除。
 詳細・ベンチマーク根拠は`ceo-office`リポジトリの
 `business-development-office/corporate-website-redesign-2026-08-12.md`参照。
+
+
+## MVV正式決定の反映（2026-08-12）
+
+CEO決定によりBloomforge Groupの正式Mission/Vision/Valuesを反映した。正本は
+`ceo-office`リポジトリの`shared/bloomforge-group.md`「Mission / Vision / Values（正式版）」。
+Our Approachセクションは正式Values（短縮形）へ置き換えた。
