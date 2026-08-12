@@ -19,7 +19,12 @@
       <img src="/assets/logo-wordmark.png" alt="Bloomforge Group" class="brand-wordmark">
       <img src="/assets/logo.png" alt="Bloomforge Group" class="brand-icon-only">
     </a>
-    <nav class="site">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site" id="site-nav">
       <a href="#mission">Mission</a>
       <a href="#products">Products</a>
       <a href="#approach">Values</a>
@@ -28,8 +33,43 @@
     </nav>
   </div>
 </header>
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+  function closeNav() {
+    nav.classList.remove('is-open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'メニューを開く');
+  }
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { closeNav(); btn.focus(); }
+  });
+})();
+</script>
 
 <section class="hero">
+  <!-- Hero Visual：CEO制作の正式Brand Asset（ボタニカルイラスト）。画像自体は無加工。
+       「写真」ではなくHero全体を彩る背景・装飾Visualとして扱う。Desktopでは右側に花を活かして
+       大きく配置し、放射状maskで四辺（特に左側の暗いビネット部分）を背景へ溶け込ませ、
+       左側の余白にHero Copyが自然に重なる構成。Mobileでは正方形にCropし、暗いビネット部分を
+       表示領域から外して花・蕾・葉を中心に見せている -->
+  <div class="hero-art" aria-hidden="true">
+    <picture>
+      <source type="image/webp" srcset="/assets/hero-visual-sm.webp 800w, /assets/hero-visual.webp 1400w" sizes="(max-width: 860px) 100vw, 58vw">
+      <source type="image/jpeg" srcset="/assets/hero-visual-sm.jpg 800w, /assets/hero-visual.jpg 1400w" sizes="(max-width: 860px) 100vw, 58vw">
+      <img src="/assets/hero-visual.jpg" alt="" class="hero-visual" width="1400" height="933" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
     <div class="hero-text">
       <h1>アイデアを、<span class="accent">成果</span>まで。</h1>
@@ -38,14 +78,6 @@
         <a class="btn btn-primary" href="#mission">Missionを見る →</a>
         <a class="btn btn-ghost" href="#products">Productsを見る</a>
       </div>
-    </div>
-    <!-- Hero Visual：CEO制作の正式Brand Asset（ボタニカルイラスト）。画像自体は無加工、CSS maskで背景へ自然に溶け込ませている -->
-    <div class="hero-art">
-      <picture>
-        <source type="image/webp" srcset="/assets/hero-visual-sm.webp 800w, /assets/hero-visual.webp 1400w" sizes="(max-width: 860px) 92vw, 46vw">
-        <source type="image/jpeg" srcset="/assets/hero-visual-sm.jpg 800w, /assets/hero-visual.jpg 1400w" sizes="(max-width: 860px) 92vw, 46vw">
-        <img src="/assets/hero-visual.jpg" alt="" class="hero-visual" width="1400" height="933" fetchpriority="high" decoding="async">
-      </picture>
     </div>
   </div>
 </section>
