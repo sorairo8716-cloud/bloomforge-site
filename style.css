@@ -1,14 +1,16 @@
 /* ==========================================================================
    Bloomforge Group — Corporate Website Design System
-   Color roles (§7): Ivory=bg / Forge Brown=text・trust / Bloom Coral=identity・CTA
+   Color roles: Ivory=bg / Forge Brown=text・trust / Bloom Coral=identity・CTA
    Sage Green=growth・section accent / Petal Pink=soft accent / Warm Gold=premium accent
+   2026-08-12：Figma Visual SSOT（Header/Hero/Mission/Products/Values/Company/Contact/
+   Floria/Footer）をProductionへ反映。Values専用Visualは正式Asset未着（Pending）。
    ========================================================================== */
 
 :root {
   --ivory: #FFF8F3;
   --ivory-deep: #FDF1E7;
   --coral: #F05F62;
-  --coral-text: #C43F43; /* Bloom Coralの濃色調整版。小さいテキスト・白文字背景でWCAG AA(4.5:1)を満たすために使用。公式Bloom Coral(#F05F62)自体は背景・大きな要素・アイコンで維持 */
+  --coral-text: #C43F43; /* Bloom Coralの濃色調整版。WCAG AA(4.5:1)確保用 */
   --coral-deep: #D94A4E;
   --pink: #F6A3A5;
   --sage: #A7BFA6;
@@ -20,10 +22,6 @@
   --border: #EFDFD3;
   --shadow: 0 12px 32px -16px rgba(76, 58, 51, 0.18);
 
-  /* Typography System（2026-08-12追加）:
-     英字Hero/英字Section Heading = Cormorant Garamond
-     日本語Hero/Mission/Vision等の大きなブランドコピー = Noto Serif JP
-     本文/Navigation/Button/Product Description/UI = Noto Sans JP */
   --font-en-serif: "Cormorant Garamond", Georgia, "Hiragino Mincho ProN", serif;
   --font-jp-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
@@ -54,16 +52,14 @@ body {
   overflow-x: hidden;
 }
 
-/* 日本語の大きなブランドコピー（Hero見出し・Section見出し・Mission/Vision本文） */
-h1, h2.section-title, .mv-block .statement, .contact-band h2 {
+h1, h2.section-title, .statement, .contact-band h2 {
   font-family: var(--font-jp-serif);
   font-weight: 700;
   color: var(--brown);
   letter-spacing: 0.01em;
 }
 
-/* 英字のHero/Section Heading（英語の見出し語・Product名） */
-.eyebrow, .product-body h3, .brand-name {
+.eyebrow, .product-body h3, .brand-name, .floria-name {
   font-family: var(--font-en-serif);
 }
 
@@ -106,21 +102,16 @@ header.site {
 header.site .bar {
   position: relative;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1.1rem 1.5rem; max-width: 1080px; margin: 0 auto; gap: 1rem;
+  padding: 1.3rem 1.5rem; max-width: 1080px; margin: 0 auto; gap: 1rem;
 }
-/* Brand：正式横長ワードマーク（透明背景）を基本使用。CSS/Web Fontでの再現はしない。
-   ブランドとしての存在感を出すため、Header内で明確に大きく表示する */
+/* Brand：正式横長ワードマーク（透明背景・余白Trim済み）。ブランドとしての存在感を
+   明確に出すため大きめに表示する */
 .brand { display: flex; align-items: center; text-decoration: none; }
-.brand-wordmark { height: 46px; width: auto; }
-.brand-icon-only { display: none; height: 40px; width: auto; }
+.brand-wordmark { height: 58px; width: auto; }
+.brand-icon-only { display: none; height: 44px; width: auto; }
 nav.site { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
 nav.site a { color: var(--brown-soft); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
 nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
-.nav-cta {
-  background: var(--coral); color: #fff !important; padding: 0.5rem 1.15rem;
-  border-radius: 999px; font-weight: 600; font-size: 0.88rem !important;
-}
-.nav-cta:hover { background: var(--coral-deep); }
 
 /* Mobile Navigation：左＝Wordmark／右＝Menu Buttonのハンバーガー構成。860px以下で有効化 */
 .nav-toggle {
@@ -136,9 +127,8 @@ nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
 .nav-toggle:hover, .nav-toggle:focus-visible { border-color: var(--coral); }
 
 /* ---------- Hero ----------
-   Hero Visualは「貼り付けた写真」ではなく、Hero全体を彩る背景Brand Visualとして扱う。
-   全面ブリードのCover画像の上にグラデーションScrimを重ね、右側に花を活かしつつ左側の
-   余白にHero Copyを自然に溶け込ませる構成（Desktop）。画像自体は無加工。 */
+   Hero VisualはCEO提供の透過PNG（有機的シルエット、無加工）。背景へ自然に溶け込むよう
+   右側へ大きく配置。Copyとの間には十分な余白を確保し、文字への侵食を避ける。 */
 .hero {
   position: relative; overflow: hidden; isolation: isolate;
   padding: 6rem 0 6.5rem;
@@ -147,34 +137,25 @@ nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
     radial-gradient(ellipse 700px 550px at 100% 60%, rgba(217,164,91,0.12), transparent 60%),
     var(--ivory);
 }
-/* Desktop：右側に大きく配置し、放射状maskで四辺（左側を特に強く）を背景へ溶け込ませる。
-   画像自体はCropせず等倍縮小のみ（width基準、height:auto） */
 .hero-art {
   position: absolute; z-index: 0; top: 50%; right: -2vw;
-  width: min(60vw, 860px);
+  width: min(64vw, 980px);
   transform: translateY(-50%);
   pointer-events: none;
 }
-.hero-visual {
-  display: block; width: 100%; height: auto;
-  -webkit-mask-image: radial-gradient(ellipse 88% 92% at 66% 50%, #000 42%, #000 58%, transparent 100%);
-          mask-image: radial-gradient(ellipse 88% 92% at 66% 50%, #000 42%, #000 58%, transparent 100%);
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
-}
+.hero-visual { display: block; width: 100%; height: auto; }
 .hero .wrap { position: relative; z-index: 2; }
-.hero-text { position: relative; max-width: min(520px, 46vw); }
-/* Hero Copyの可読性を、画像との重なり具合に依存せず常に確保するための柔らかいIvory Halo */
+.hero-text { position: relative; max-width: min(520px, 44vw); }
 .hero-text::before {
   content: "";
   position: absolute;
-  inset: -2rem -2.5rem -2rem -2rem;
+  inset: -2rem -3rem -2rem -2rem;
   z-index: -1;
   pointer-events: none;
-  filter: blur(6px);
-  background: radial-gradient(ellipse 100% 100% at 32% 50%,
-    color-mix(in srgb, var(--ivory) 92%, transparent) 0%,
-    color-mix(in srgb, var(--ivory) 72%, transparent) 55%,
+  filter: blur(8px);
+  background: radial-gradient(ellipse 100% 100% at 30% 50%,
+    color-mix(in srgb, var(--ivory) 90%, transparent) 0%,
+    color-mix(in srgb, var(--ivory) 65%, transparent) 55%,
     transparent 100%);
 }
 .hero h1 { font-size: 2.7rem; line-height: 1.35; margin: 0 0 1.1rem; text-wrap: balance; }
@@ -194,7 +175,7 @@ nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
 .btn-ghost:hover { border-color: var(--coral); color: var(--coral); }
 
 /* ---------- Botanical divider ---------- */
-.divider { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2.5rem; color: var(--sage-deep); }
+.divider { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 2.5rem 0; color: var(--sage-deep); }
 .divider .line { height: 1px; width: 64px; background: var(--border); }
 .divider svg { width: 20px; height: 20px; }
 
@@ -206,17 +187,15 @@ section { padding: 5rem 0; }
 }
 .band-pink { background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-deep) 40%, var(--ivory-deep) 60%, var(--ivory) 100%); }
 
-h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
+h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; text-align: center; }
 .section-head { text-align: center; margin-bottom: 3rem; }
 .section-head .lede { color: var(--brown-soft); max-width: 52ch; margin: 0 auto; }
 
-/* ---------- Mission / Vision ---------- */
-.mv-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-.mv-block { text-align: center; }
-.mv-block p.statement {
-  font-family: Georgia, "Hiragino Mincho ProN", serif;
+/* ---------- Mission / Vision（Figma最終案：中央揃えの一体構成） ---------- */
+.mv-stack { max-width: 760px; margin: 0 auto; text-align: center; }
+.statement {
   font-size: 1.5rem; line-height: 1.85; color: var(--brown);
-  max-width: 640px; margin: 0 auto; text-wrap: balance;
+  margin: 0; text-wrap: balance;
 }
 
 /* ---------- Products ---------- */
@@ -242,19 +221,35 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
 }
 .chip-link:hover { color: var(--coral-deep); }
 
-/* ---------- Values ---------- */
+/* ---------- Values ----------
+   Visualは暫定Draft（Pending Visual Asset。CEO/ChatGPT側で正式Brand Asset制作中）。
+   #value-icon 内のSVGのみ差し替えれば足りる構造を維持し、レイアウトはVisual差し替えを
+   前提に固定しすぎない。Desktop=4列中央揃え、Mobile=1列・アイコン左/テキスト右の行形式。 */
 .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
-.value-card { text-align: center; padding: 0 0.5rem; }
+.value-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 0.5rem; }
 .value-icon {
-  width: 62px; height: 62px; margin: 0 auto 1.1rem; border-radius: 50%;
+  width: 64px; height: 64px; margin: 0 auto 1.1rem; border-radius: 50%; flex: none;
   background: var(--surface); border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center;
 }
-.value-icon svg { width: 30px; height: 30px; stroke: var(--coral); }
-/* value-lead: Value本文の1行目（英語のValue 1のみCormorant Garamond、他は日本語のためNoto Serif JP） */
-.value-card .value-lead { font-family: var(--font-jp-serif); font-weight: 700; font-size: 1.02rem; margin: 0 0 0.4rem; }
-.value-card .value-lead[lang="en"] { font-family: var(--font-en-serif); }
-.value-card .value-sub { font-family: var(--font-sans); font-size: 0.92rem; color: var(--brown-soft); margin: 0; }
+.value-icon svg { width: 30px; height: 30px; stroke: var(--coral); fill: none; }
+.value-icon svg .fill-dot { fill: var(--coral); stroke: none; }
+
+/* ---------- Responsive copy utilities ----------
+   FigmaのDesktop/Mobileで改行位置・文章そのものが異なる箇所に使用。
+   brk-*＝<br>の出し分け／only-*＝文章要素そのものの出し分け */
+.brk-only-mobile { display: none; }
+.brk-only-desktop { display: inline; }
+.only-mobile { display: none; }
+.only-desktop { display: block; }
+@media (max-width: 860px) {
+  .brk-only-mobile { display: inline; }
+  .brk-only-desktop { display: none; }
+  .only-mobile { display: block; }
+  .only-desktop { display: none; }
+}
+.value-card .value-lead { font-family: var(--font-sans); font-weight: 700; font-size: 1rem; margin: 0 0 0.35rem; color: var(--brown); }
+.value-card .value-sub { font-family: var(--font-sans); font-weight: 700; font-size: 1rem; color: var(--brown-soft); margin: 0; }
 
 /* ---------- Company ---------- */
 .company-section { position: relative; }
@@ -262,28 +257,44 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
   background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
   padding: 3rem; box-shadow: var(--shadow); position: relative; overflow: hidden;
 }
-.company-card .botanical-corner { position: absolute; right: -20px; bottom: -20px; width: 160px; height: 160px; opacity: 0.5; }
+.company-card .botanical-corner { position: absolute; right: -20px; bottom: -20px; width: 160px; height: 160px; opacity: 0.28; }
 .company-card p { max-width: 56ch; margin: 0 0 1rem; color: var(--brown-soft); }
-.company-card p:last-of-type { margin-bottom: 1.5rem; }
+.company-card p:last-of-type { margin-bottom: 0; }
 
-/* ---------- Contact CTA band ---------- */
+/* ---------- Contact ----------
+   濃いCoral全面ベタ塗りは使用せず、Bloom Ivoryを基調にPetal Pinkを淡く重ねた背景へ。
+   Bloom CoralはCTAボタンのみに使用し、問い合わせ導線としてのアクセントに限定する。 */
 .contact-band {
-  /* coral-textベース：白文字とのコントラストをWCAG AA(4.5:1)以上確保するため、
-     公式Bloom Coral(#F05F62)よりわずかに濃いグラデーションを使用 */
-  background: linear-gradient(135deg, var(--coral-text) 0%, #B8383C 100%);
-  color: #fff; text-align: center; padding: 4rem 1.5rem; border-radius: 28px;
-  margin: 0 auto; max-width: 1080px;
+  position: relative;
+  text-align: center; padding: 5rem 1.5rem;
+  background: radial-gradient(ellipse 70% 90% at 50% 30%, color-mix(in srgb, var(--pink) 16%, transparent), transparent 70%), var(--ivory);
+  border-radius: 28px; overflow: hidden;
 }
-.contact-band h2 { color: #fff; margin: 0 0 0.6rem; font-size: 1.8rem; }
-.contact-band p { color: rgba(255,255,255,0.92); margin: 0 0 1.8rem; }
-.contact-band .btn-primary { background: #fff; color: var(--coral-text); box-shadow: none; }
-.contact-band .btn-primary:hover { background: var(--ivory); }
+.contact-band h2 { margin: 0 0 0.6rem; font-size: 1.8rem; }
+.contact-band p { color: var(--brown-soft); margin: 0 0 1.8rem; }
+.contact-band .btn-primary { box-shadow: 0 12px 28px -10px rgba(240, 95, 98, 0.4); }
+.contact-leaf { position: absolute; opacity: 0.1; stroke: var(--sage-deep); fill: none; stroke-width: 1.4; pointer-events: none; }
+.contact-leaf.leaf-1 { top: -10px; left: 4%; width: 100px; height: 100px; transform: rotate(-20deg); }
+.contact-leaf.leaf-2 { bottom: -20px; right: 5%; width: 120px; height: 120px; transform: rotate(30deg); stroke: var(--pink); }
+
+/* ---------- Floria / Image Character ----------
+   Corporate Website最下部（Contact→Floria→Footer）に配置する独立セクション。
+   Hero Visualより明確に控えめなサイズで、ブランドの世界観を象徴する存在として添える。 */
+.floria-section { background: var(--ivory); }
+.floria-inner { display: flex; align-items: flex-end; justify-content: center; gap: 4.5rem; }
+.floria-text { max-width: 460px; text-align: left; }
+.floria-text .eyebrow { justify-content: flex-start; }
+.floria-name { font-size: 2.6rem; font-weight: 600; color: var(--brown); margin: 0 0 0.3rem; line-height: 1.1; }
+.floria-subtitle { font-family: var(--font-en-serif); font-size: 0.95rem; color: var(--brown-soft); margin: 0 0 1.1rem; }
+.floria-body { color: var(--brown-soft); font-size: 0.98rem; line-height: 1.85; margin: 0; }
+.floria-portrait-wrap { flex: none; width: min(30vw, 380px); }
+.floria-portrait-wrap img { width: 100%; height: auto; display: block; }
 
 /* ---------- Footer ---------- */
 footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margin-top: 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 2.5rem; }
 .footer-brand { display: flex; align-items: center; text-decoration: none; margin-bottom: 0.9rem; }
-.footer-brand .brand-wordmark { height: 30px; width: auto; }
+.footer-brand .brand-wordmark { height: 34px; width: auto; }
 .footer-tagline { font-family: var(--font-sans); color: var(--brown-soft); font-size: 0.88rem; max-width: 28ch; }
 .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-soft); margin: 0 0 0.9rem; font-weight: 600; }
 .footer-col a { display: block; color: var(--brown); text-decoration: none; font-size: 0.92rem; margin-bottom: 0.6rem; }
@@ -310,7 +321,6 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
 
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
-  /* Mobile Navigation：左＝Wordmark／右＝Menu Button。navはハンバーガー展開時のみ表示 */
   .nav-toggle { display: inline-flex; }
   nav.site {
     display: none;
@@ -322,53 +332,56 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
   }
   nav.site.is-open { display: flex; }
   nav.site a { width: 100%; padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
-  nav.site a.nav-cta { width: fit-content; margin-top: 0.85rem; border-bottom: none; }
+  nav.site a:last-of-type { border-bottom: none; }
 
-  /* Hero：Desktopの縮小ではなく、上部＝Visual（正方形Crop）／下部＝Copy＋CTAへ組み替える。
-     暗いビネット部分（画像左側）はobject-positionを右寄せにして表示領域から外し、
-     花・蕾・葉が中心に来るようCropする */
+  /* Hero：上部＝Visual（正方形寄りCrop）／下部＝Copy＋CTA。花・葉が中心に来るようCropする */
   .hero { padding: 0 0 2.75rem; background: var(--ivory); }
   .hero-art {
     position: relative; z-index: 0; top: auto; right: auto; transform: none;
     width: 100%; aspect-ratio: 1 / 1; overflow: hidden; pointer-events: auto;
   }
-  .hero-visual {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: 90% 48%;
-    -webkit-mask-image: none; mask-image: none;
-  }
-  .hero-art::after {
-    content: "";
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 55%, var(--ivory) 100%);
-  }
+  .hero-visual { width: 100%; height: 100%; object-fit: cover; object-position: 85% 42%; }
   .hero .wrap { padding-top: 1.75rem; }
   .hero-text { max-width: 100%; }
   .hero-text::before { display: none; }
   .hero h1 { font-size: 2.1rem; }
+
   .products-grid { grid-template-columns: 1fr; }
-  .values-grid { grid-template-columns: repeat(2, 1fr); row-gap: 2.2rem; }
+
+  /* Values：1列・アイコン左/テキスト右の行形式へ切り替え */
+  .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .value-card { flex-direction: row; align-items: center; text-align: left; padding: 0; gap: 1.1rem; }
+  .value-icon { margin: 0; }
+  .value-card .value-lead, .value-card .value-sub { display: inline; }
+  .value-card .value-sub::before { content: " "; }
+
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   section { padding: 3.5rem 0; }
   .company-card { padding: 2rem 1.5rem; }
   .contact-band { padding: 3rem 1.25rem; border-radius: 20px; }
+
+  /* Floria：縦構成（テキスト→Visual）、画面を占有しすぎないサイズ */
+  .floria-inner { flex-direction: column; align-items: center; gap: 1.25rem; }
+  .floria-text { max-width: 420px; text-align: center; }
+  .floria-text .eyebrow { justify-content: center; }
+  .floria-portrait-wrap { width: min(62vw, 280px); }
 }
 
 @media (max-width: 480px) {
   .wrap { padding: 0 1.15rem; }
-  header.site .bar { padding: 0.85rem 1.15rem; }
+  header.site .bar { padding: 1rem 1.15rem; }
   .hero-art { aspect-ratio: 4 / 5; }
-  .hero-visual { object-position: 92% 45%; }
+  .hero-visual { object-position: 88% 40%; }
   .hero h1 { font-size: 1.75rem; }
   .hero .lede { font-size: 1rem; }
-  .mv-block p.statement { font-size: 1.2rem; }
-  .values-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .statement { font-size: 1.2rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .brand-wordmark { height: 36px; }
-  .brand-icon-only { height: 32px; }
+  .brand-wordmark { height: 44px; }
+  .brand-icon-only { height: 36px; }
+  .floria-name { font-size: 2.1rem; }
 }
 
-/* 極小幅端末のみ、横長ワードマーク→正式ロゴマーク単体へ切替（指示どおり「横幅上問題がある場合のみ」の限定対応） */
+/* 極小幅端末のみ、横長ワードマーク→正式ロゴマーク単体へ切替（横幅上問題がある場合のみの限定対応） */
 @media (max-width: 360px) {
   .brand-wordmark { display: none; }
   .brand-icon-only { display: block; }
