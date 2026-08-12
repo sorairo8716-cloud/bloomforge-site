@@ -1,17 +1,27 @@
 # bloomforge.jp
 
-Bloomforge（丸田さくら個人開発）の公開Webサイト。GitHub Pagesでホスティングし、
-`bloomforge.jp`ドメインを紐づけて公開する。
+Bloomforge Group公式Webサイト。GitHub Pagesでホスティングし、`bloomforge.jp`ドメインを
+紐づけて公開する。2026-08-12、CEO指示「bloomforge.jpのSSL復旧およびBloomforge Group公式
+サイトへの刷新」により、個人開発の屋号ページからBloomforge Group公式サイトへ刷新した。
 
 現在の内容：
-- `/` — Bloomforgeのトップページ
-- `/support` — Florafolioのサポートページ
-- `/privacy` — Florafolioのプライバシーポリシー
+- `/` — Bloomforge Groupのトップページ（Hero / What We Do / Products / Experiments / Links）
+- `/support` — Florafolioのサポートページ（変更なし、維持）
+- `/privacy` — Florafolioのプライバシーポリシー（変更なし、維持）
+- `/assets/` — Bloomforge Group公式ロゴ（`shared/brand/`と同一素材のWeb最適化版）
 
-内容の出典（社内向け下書き・決定経緯）は Florafolio リポジトリの
-`docs/05_growth/support-page-draft.md` / `docs/05_growth/privacy-policy-draft.md` を参照。
+デザイン方針・掲載可否の判断根拠は`ceo-office`リポジトリの
+`business-development-office/x-account-launch-proposal-2026-08-12.md`および
+関連decisionsを参照。
+
+## SSL証明書について（2026-08-12）
+
+以前、GitHub Pages側のカスタムドメイン証明書が発行されないままの状態（`https_enforced: false`）
+が続き、ブラウザでセキュリティ警告が出る不具合があった。原因はDNS設定ではなく（A/AAAA/CAAは
+すべて正常だったことを確認済み）、GitHub側の証明書発行プロセスが完了しないまま止まっていた
+こと。カスタムドメイン設定を一度解除→再設定することで証明書発行を再トリガーし解消した。
+DNS（MX/SPF/DKIM等、Google Workspaceメール関連レコードを含む）は一切変更していない。
 
 ## 状態
 
-2026-08-10時点：リポジトリ作成・コンテンツ準備のみ。GitHub Pagesの有効化・実際の公開・
-DNS設定（bloomforge.jpのCNAMEレコード追加）はCEOの最終確認後に実施する。
+2026-08-12時点：Bloomforge Group公式サイトとして刷新・公開済み。
