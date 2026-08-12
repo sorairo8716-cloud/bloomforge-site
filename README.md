@@ -25,3 +25,12 @@ DNS（MX/SPF/DKIM等、Google Workspaceメール関連レコードを含む）�
 ## 状態
 
 2026-08-12時点：Bloomforge Group公式サイトとして刷新・公開済み。
+
+
+## Corporate Website化（2026-08-12）
+
+CEO指示「Bloomforge Group公式サイト再設計 — Corporate Website化」により、AI運営手法を
+前面に出す表現を削除し、Mission/Vision/Products/Approach/Companyを中心とした一般的な
+Corporate Website構成へ再設計した。GitHubへの主要導線（Header/Hero/Products内）は削除。
+詳細・ベンチマーク根拠は`ceo-office`リポジトリの
+`business-development-office/corporate-website-redesign-2026-08-12.md`参照。
