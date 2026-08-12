@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bloomforge Group</title>
-<meta name="description" content="Bloomforge Groupは、アイデアも時間も日々の営みも、まだ形になっていない可能性に輪郭を与え、育てていく事業スタジオです。Florafolio・AI Company Starter Kit等のプロダクトを開発・提供しています。">
+<meta name="description" content="Bloomforge Groupは、日本を拠点にデジタルサービスやプロダクトの企画から運営までを行っています。Florafolio・AI Company Starter Kit等のプロダクトを開発・提供しています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=20260812e">
+<link rel="stylesheet" href="/style.css?v=20260812f">
 <link rel="icon" href="/assets/logo.png">
 </head>
 <body>
@@ -27,9 +27,9 @@
     <nav class="site" id="site-nav">
       <a href="#mission">Mission</a>
       <a href="#products">Products</a>
-      <a href="#approach">Values</a>
+      <a href="#values">Values</a>
       <a href="#company">Company</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -58,22 +58,21 @@
 </script>
 
 <section class="hero">
-  <!-- Hero Visual：CEO制作の正式Brand Asset（ボタニカルイラスト）。画像自体は無加工。
-       「写真」ではなくHero全体を彩る背景・装飾Visualとして扱う。Desktopでは右側に花を活かして
-       大きく配置し、放射状maskで四辺（特に左側の暗いビネット部分）を背景へ溶け込ませ、
-       左側の余白にHero Copyが自然に重なる構成。Mobileでは正方形にCropし、暗いビネット部分を
-       表示領域から外して花・蕾・葉を中心に見せている -->
+  <!-- Hero Visual v2：CEO提供の透過PNG（有機的シルエット、無加工）。Figma承認デザインの通り、
+       右側へ大きく配置しCopyへ自然に重ねる構成 -->
   <div class="hero-art" aria-hidden="true">
     <picture>
-      <source type="image/webp" srcset="/assets/hero-visual-sm.webp 800w, /assets/hero-visual.webp 1400w" sizes="(max-width: 860px) 100vw, 58vw">
-      <source type="image/jpeg" srcset="/assets/hero-visual-sm.jpg 800w, /assets/hero-visual.jpg 1400w" sizes="(max-width: 860px) 100vw, 58vw">
-      <img src="/assets/hero-visual.jpg" alt="" class="hero-visual" width="1400" height="933" fetchpriority="high" decoding="async">
+      <source type="image/webp" srcset="/assets/hero-visual-v2-sm.webp 800w, /assets/hero-visual-v2.webp 1400w" sizes="(max-width: 860px) 100vw, 64vw">
+      <img src="/assets/hero-visual-v2.png" alt="" class="hero-visual"
+        srcset="/assets/hero-visual-v2-sm.png 800w, /assets/hero-visual-v2.png 1400w"
+        sizes="(max-width: 860px) 100vw, 64vw"
+        width="1400" height="1400" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="wrap">
     <div class="hero-text">
-      <h1>アイデアを、<span class="accent">成果</span>まで。</h1>
-      <p class="lede">Bloomforge Groupは、小さなアイデアを実際に使われるプロダクト・事業へ育てる事業スタジオです。</p>
+      <h1>アイデアを、<br class="brk-only-mobile"><span class="accent">成果</span>まで。</h1>
+      <p class="lede">Bloomforge Groupは小さなアイデアから<br>新たなサービスやプロダクトを生み出します。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#mission">Missionを見る →</a>
         <a class="btn btn-ghost" href="#products">Productsを見る</a>
@@ -91,18 +90,14 @@
       </span>
       <h2 class="sr-only">Mission &amp; Vision</h2>
     </div>
-    <div class="mv-grid">
-      <div class="mv-block">
-        <p class="statement">アイデアも、時間も、日々の営みも——まだ形になっていない可能性に輪郭を与え、育てていく。</p>
-      </div>
+    <div class="mv-stack">
+      <p class="statement">アイデアも、時間も、<br class="brk-only-mobile">日々の営みも——<br>まだ形になっていない可能性に<br class="brk-only-mobile">輪郭を与え、育てていく。</p>
       <div class="divider" aria-hidden="true">
         <span class="line"></span>
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 18C10 10 4 8 2 2c8 0 12 6 8 16z"/></svg>
         <span class="line"></span>
       </div>
-      <div class="mv-block">
-        <p class="statement">「まだ形になっていない」というだけで、可能性を諦めない。そんな選択肢が当たり前にある社会をつくる。</p>
-      </div>
+      <p class="statement">「まだ形になっていない」<br class="brk-only-mobile">というだけで、可能性を諦めない。<br>そんな選択肢が<br class="brk-only-mobile">当たり前にある社会をつくる。</p>
     </div>
   </div>
 </section>
@@ -133,10 +128,10 @@
         <div class="product-body">
           <h3>Florafolio</h3>
           <p class="ruby">フローラフォリオ</p>
-          <p>予定や時間の使い方を、カテゴリごとの植物の成長として可視化するライフログアプリ。カレンダーと連携し、仕事・趣味・休息などに使った時間を「管理」ではなく「育てる」感覚で振り返れます。</p>
+          <p class="only-desktop">予定や時間の使い方を、カテゴリごとの植物の成長として可視化するライフログアプリ。カレンダーと連携し、仕事・趣味・休息などに使った時間を「管理」ではなく「育てる」感覚で振り返れます。</p>
+          <p class="only-mobile">予定や時間の使い方を、カテゴリごとの植物の成長として可視化するライフログアプリ。使った時間を「管理」ではなく「育てる」感覚で振り返れます。</p>
           <div class="product-links">
             <a class="chip-link" href="/support">サポートページ →</a>
-            <a class="chip-link" href="/privacy">プライバシーポリシー →</a>
           </div>
         </div>
       </div>
@@ -153,7 +148,8 @@
         <div class="product-body">
           <h3>AI Company Starter Kit</h3>
           <p class="ruby">エーアイ・カンパニー・スターターキット</p>
-          <p>Claude Codeで複数プロジェクトを運用していると、毎回同じ運用ルールを説明し直す羽目になります。承認ルール・意思決定記録・報告フォーマットを一式にまとめ、その手間をなくすテンプレートキットです。</p>
+          <p class="only-desktop">Claude Codeで複数プロジェクトを運用していると、毎回同じ運用ルールを説明し直す羽目になります。承認ルール・意思決定記録・報告フォーマットを一式にまとめ、その手間をなくすテンプレートキットです。</p>
+          <p class="only-mobile">Claude Codeで複数プロジェクトを運用する際の、承認ルール・意思決定記録・報告フォーマットを一式にまとめたテンプレートキットです。</p>
           <div class="product-links">
             <a class="chip-link" href="https://bloomforgelab.gumroad.com/l/ai-company-starter-kit?utm_source=website&amp;utm_medium=referral&amp;utm_campaign=bloomforge_site">詳しく見る（Gumroad） →</a>
           </div>
@@ -163,7 +159,7 @@
   </div>
 </section>
 
-<section id="approach" class="band-sage">
+<section id="values" class="band-sage">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">
@@ -174,51 +170,49 @@
       <p class="lede">Bloomforge Groupが、事業やプロダクトについて迷ったときに立ち返る4つの原則です。</p>
     </div>
 
-    <!-- Values アイコンは暫定Illustration（Draft/Placeholder）。CEOの正式Visual Asset受領後に差し替え予定。#value-icon 内のsvgのみ差し替えれば良い構造 -->
+    <!-- Values Visual：現在は暫定Draft（Pending Visual Asset）。CEO/ChatGPT側で正式Brand Asset
+         制作中のため、正式Asset到着後に差し替え予定。Figma上の現行Draftアイコン（円・芽・花・枝の
+         モチーフ）を忠実に反映しているが、あくまで仮のIllustrationであり、正式Brand Assetでは
+         ない。差し替えは下記4箇所の .value-icon 内svgのみで完結する構造にしてある（Desktop/
+         Mobileともレイアウト変更不要） -->
     <div class="values-grid">
       <div class="value-card">
-        <div class="value-icon">
-          <svg viewBox="0 0 30 30" fill="none" stroke-width="1.8">
-            <circle cx="12" cy="15" r="9"/>
-            <circle cx="19" cy="15" r="4" fill="currentColor" stroke="none"/>
+        <div class="value-icon"><!-- Pending Visual Asset：差し替え予定 -->
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="11.5" cy="15" r="7.5"/>
+            <circle cx="18.5" cy="15" r="7.5"/>
           </svg>
         </div>
         <p class="value-lead" lang="en">Think unlimited, execute limited.</p>
         <p class="value-sub">可能性は無限に、実行は絞る。</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">
-          <svg viewBox="0 0 30 30" fill="none" stroke-width="1.8" stroke-linecap="round">
-            <path d="M15 24V13"/>
-            <path d="M15 13c0-3 3-4 5-3-1 3-3 4-5 3z" fill="currentColor" stroke="none" opacity="0.85"/>
-            <path d="M15 16c0-3-3-4-5-3 1 3 3 4 5 3z" fill="currentColor" stroke="none" opacity="0.6"/>
-            <circle cx="15" cy="25" r="1.5" fill="currentColor" stroke="none"/>
+        <div class="value-icon"><!-- Pending Visual Asset：差し替え予定 -->
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M15 30V5.8C15 0.6 24 -1.1 30 0.6C27 5.8 21 7.6 15 5.8ZM15 11C15 5.8 6 4.1 0 5.8C3 11 9 12.7 15 11Z"/>
           </svg>
         </div>
         <p class="value-lead">小さく試し、</p>
         <p class="value-sub">育てながら形にする。</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">
+        <div class="value-icon"><!-- Pending Visual Asset：差し替え予定 -->
           <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6">
             <circle cx="21.5" cy="15" r="3.2"/>
             <circle cx="17" cy="21.2" r="3.2"/>
             <circle cx="9.7" cy="18.8" r="3.2"/>
             <circle cx="9.7" cy="11.2" r="3.2"/>
             <circle cx="17" cy="8.8" r="3.2"/>
-            <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none"/>
+            <circle class="fill-dot" cx="15" cy="15" r="2"/>
           </svg>
         </div>
         <p class="value-lead">作ることをゴールにしない。</p>
         <p class="value-sub">使われて、はじめてBloom。</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">
-          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <path d="M15 25V15"/>
-            <path d="M15 15L15 5" stroke-dasharray="1.5,2.5" opacity="0.4"/>
-            <path d="M15 15L22 8"/>
-            <circle cx="15" cy="15" r="1.8" fill="currentColor" stroke="none"/>
+        <div class="value-icon"><!-- Pending Visual Asset：差し替え予定 -->
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 28L2 11.5L28 1"/>
           </svg>
         </div>
         <p class="value-lead">方向修正は失敗ではなく、</p>
@@ -239,11 +233,11 @@
     </div>
     <div class="company-card">
       <svg class="botanical-corner" viewBox="0 0 160 160" aria-hidden="true">
-        <path d="M160 160C120 160 80 130 90 90C130 100 160 120 160 160Z" fill="#A7BFA6" opacity="0.35"/>
-        <path d="M160 160C140 130 130 100 150 70C165 100 170 130 160 160Z" fill="#F6A3A5" opacity="0.3"/>
+        <path d="M160 160C120 160 80 130 90 90C130 100 160 120 160 160Z" fill="#A7BFA6" opacity="0.24"/>
+        <path d="M160 160C140 130 130 100 150 70C165 100 170 130 160 160Z" fill="#F6A3A5" opacity="0.2"/>
       </svg>
-      <p><strong>Bloomforge Group</strong>（ブルームフォージ・グループ）は、日本を拠点に、複数のプロダクト・事業を育てる事業スタジオです。</p>
-      <p>アイデアも、時間も、日々の営みも——まだ形になっていない可能性に輪郭を与え、育てていく。それがBloomforge Groupの取り組みです。現在は法人化前の段階で運営しています。</p>
+      <p>Bloomforge Group<br class="brk-only-mobile">（ブルームフォージグループ）は、日本を拠点にデジタルサービスや<br class="brk-only-desktop">プロダクトの企画から運営までを行っています。</p>
+      <p>日常や仕事の中にある課題やアイデアを起点に、企画・検証・開発・改善を重ねながら、実際に利用されるサービスや事業として形にしていくことを目指しています。</p>
     </div>
   </div>
 </section>
@@ -251,9 +245,33 @@
 <section id="contact">
   <div class="wrap">
     <div class="contact-band">
-      <h2>一緒に、可能性を育てませんか</h2>
+      <svg class="contact-leaf leaf-1" viewBox="0 0 100 100" aria-hidden="true"><path d="M85 85C60 75 45 55 40 25c25 5 40 25 45 60z"/></svg>
+      <svg class="contact-leaf leaf-2" viewBox="0 0 100 100" aria-hidden="true"><path d="M15 85C40 75 55 55 60 25c-25 5-40 25-45 60z"/></svg>
+      <h2>一緒に、<br class="brk-only-mobile">可能性を育てませんか</h2>
       <p>ご質問・お問い合わせはこちらから。</p>
       <a class="btn btn-primary" href="mailto:contact@bloomforge.jp">contact@bloomforge.jp</a>
+    </div>
+  </div>
+</section>
+
+<section class="floria-section">
+  <div class="wrap">
+    <div class="floria-inner">
+      <div class="floria-text">
+        <span class="eyebrow">Image Character</span>
+        <p class="floria-name">Floria</p>
+        <p class="floria-subtitle">Bloomforge Group Image Character</p>
+        <p class="floria-body">自然と炎の精霊<br>アイデアの火種を見つけ、<br class="brk-only-mobile">優しく育て、花を咲かせる。<br>Bloomforge Groupの案内人です。</p>
+      </div>
+      <div class="floria-portrait-wrap">
+        <picture>
+          <source type="image/webp" srcset="/assets/floria-portrait-sm.webp 700w, /assets/floria-portrait.webp 1200w" sizes="(max-width: 860px) 62vw, 30vw">
+          <img src="/assets/floria-portrait.png" alt="Bloomforge Groupのイメージキャラクター、Floria"
+            srcset="/assets/floria-portrait-sm.png 700w, /assets/floria-portrait.png 1200w"
+            sizes="(max-width: 860px) 62vw, 30vw"
+            width="1200" height="811" loading="lazy" decoding="async">
+        </picture>
+      </div>
     </div>
   </div>
 </section>
@@ -271,7 +289,7 @@
         <h4>Navigate</h4>
         <a href="#mission">Mission</a>
         <a href="#products">Products</a>
-        <a href="#approach">Values</a>
+        <a href="#values">Values</a>
         <a href="#company">Company</a>
       </div>
       <div class="footer-col">
