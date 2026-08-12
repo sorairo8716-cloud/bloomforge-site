@@ -41,3 +41,24 @@ Corporate Website構成へ再設計した。GitHubへの主要導線（Header/He
 CEO決定によりBloomforge Groupの正式Mission/Vision/Valuesを反映した。正本は
 `ceo-office`リポジトリの`shared/bloomforge-group.md`「Mission / Vision / Values（正式版）」。
 Our Approachセクションは正式Values（短縮形）へ置き換えた。
+
+
+## Visual全面リデザイン（2026-08-12 第2回）
+
+CEO指示「Bloomforge Group Corporate Website ビジュアル全面リデザイン」対応。情報設計・
+正式MVVは維持したまま、Visual Design/Brand Experienceを全面刷新した。
+
+- ロゴを透過PNGへ差し替え（白背景バグ修正）
+- Design System刷新：Bloom Coral/Petal Pink/Sage Green/Bloom Ivory/Forge Brown/
+  Warm Goldに役割分担を持たせたCSS変数を新設
+- Hero：ボタニカルモチーフ（茎・葉・花・炎の粒子）を新規SVGで制作、Visual Heroへ刷新
+- Products：Product個別のSVGアイコン付きVisualカードへ（実在しないスクリーンショットは
+  不使用）
+- Values：4項目それぞれに専用アイコン（手描きSVG）を追加
+- Company：ボタニカル装飾アクセント付きのCardへ
+- Contact：Bloom Coral系のCTAバンドへ
+- Footer：4カラム構成へ整理
+- Florafolioの表記を「Florafolio（フローラフォリオ）」へ修正、実仕様（seed-release-definition.md）と照合した説明文に更新
+- `/support`・`/privacy`のヘッダー/フッターを新デザインへ統一（法的文言・Q&A本文は無変更、diff確認済み）
+- Accessibility：コントラスト比WCAG AA未達箇所（brown-soft・coral系リンク・Contact
+  バンド）を再調整して解消。Mission/Companyセクションにsr-only h2を追加し見出し構造を修正
