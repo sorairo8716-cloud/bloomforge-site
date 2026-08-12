@@ -348,12 +348,17 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
 
   .products-grid { grid-template-columns: 1fr; }
 
-  /* Values：1列・アイコン左/テキスト右の行形式へ切り替え */
+  /* Values：1列・アイコン左/テキスト右の行形式へ切り替え。
+     Lead/Subは.value-copy（1つのブロック）内に収め、そこで初めてinline化する。
+     .value-card自体はflex rowのため、直接の子をinline化しても
+     flexアイテムとしてブロック化されてしまい、Lead/Subが別々の列に分離して
+     幅が極端に狭くなり単語途中で改行される不具合があったための構造修正 */
   .values-grid { grid-template-columns: 1fr; gap: 2rem; }
   .value-card { flex-direction: row; align-items: center; text-align: left; padding: 0; gap: 1.1rem; }
   .value-icon { margin: 0; }
-  .value-card .value-lead, .value-card .value-sub { display: inline; }
-  .value-card .value-sub::before { content: " "; }
+  .value-copy { flex: 1; min-width: 0; }
+  .value-copy .value-lead, .value-copy .value-sub { display: inline; font-size: 0.98rem; }
+  .value-copy .value-sub::before { content: " "; }
 
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   section { padding: 3.5rem 0; }
