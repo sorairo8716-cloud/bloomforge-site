@@ -129,7 +129,7 @@ nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
     radial-gradient(ellipse 700px 500px at 100% 30%, rgba(167,191,166,0.18), transparent 60%),
     var(--ivory);
 }
-.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; position: relative; z-index: 2; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; position: relative; z-index: 2; }
 .hero h1 { font-size: 2.7rem; line-height: 1.35; margin: 0 0 1.1rem; text-wrap: balance; }
 .hero h1 .accent { color: var(--coral); }
 .hero .lede { font-size: 1.08rem; color: var(--brown-soft); max-width: 46ch; margin: 0 0 2rem; }
@@ -146,8 +146,26 @@ nav.site a:hover, nav.site a:focus-visible { color: var(--coral); }
 .btn-ghost { background: transparent; color: var(--brown); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--coral); color: var(--coral); }
 
-.hero-art { position: relative; height: 320px; }
-.hero-art svg { width: 100%; height: 100%; }
+.hero-art { position: relative; }
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 58% 52% at 56% 44%, rgba(240,95,98,0.18), transparent 70%),
+    radial-gradient(ellipse 48% 46% at 40% 62%, rgba(217,164,91,0.15), transparent 70%);
+  filter: blur(32px);
+}
+.hero-visual {
+  position: relative; z-index: 1;
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: radial-gradient(ellipse 72% 78% at 56% 47%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 72% 78% at 56% 47%, #000 55%, transparent 100%);
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+}
 
 /* ---------- Botanical divider ---------- */
 .divider { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2.5rem; color: var(--sage-deep); }
@@ -267,7 +285,7 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: 1fr; }
-  .hero-art { height: 220px; order: -1; }
+  .hero-art { order: -1; max-width: 460px; margin: 0 auto 0.75rem; }
   .hero h1 { font-size: 2.1rem; }
   .products-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); row-gap: 2.2rem; }
@@ -283,7 +301,9 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
   nav.site { gap: 0.9rem 1.1rem; font-size: 0.85rem; width: 100%; justify-content: flex-start; order: 3; }
   nav.site a { font-size: 0.85rem; padding: 0.15rem 0; }
   .nav-cta { padding: 0.4rem 0.9rem; }
-  .hero { padding: 3rem 0 3.5rem; }
+  .hero { padding: 2.5rem 0 3.5rem; }
+  .hero-art { max-width: 100%; margin: 0 auto 1rem; }
+  .hero-art::before { inset: -8%; filter: blur(20px); }
   .hero h1 { font-size: 1.75rem; }
   .hero .lede { font-size: 1rem; }
   .mv-block p.statement { font-size: 1.2rem; }
