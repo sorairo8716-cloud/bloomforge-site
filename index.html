@@ -4,88 +4,275 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bloomforge Group</title>
-<meta name="description" content="Bloomforge Groupは、アイデアを実際に使われるプロダクト・事業へ育てる事業スタジオです。Florafolio・AI Company Starter Kit等のプロダクトを開発・提供しています。">
+<meta name="description" content="Bloomforge Groupは、アイデアも時間も日々の営みも、まだ形になっていない可能性に輪郭を与え、育てていく事業スタジオです。Florafolio・AI Company Starter Kit等のプロダクトを開発・提供しています。">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/assets/logo.png">
 </head>
 <body>
-<div class="wrap">
-  <header class="site">
-    <a class="brand" href="/"><img src="/assets/logo.png" alt="" class="brand-mark"> Bloomforge Group</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="" class="brand-mark">
+      <span class="brand-name">Bloomforge Group</span>
+    </a>
     <nav class="site">
       <a href="#mission">Mission</a>
       <a href="#products">Products</a>
       <a href="#approach">Values</a>
       <a href="#company">Company</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <section class="hero">
-    <h1>アイデアを、成果まで。</h1>
-    <p class="lede">Bloomforge Groupは、小さなアイデアを実際に使われるプロダクト・事業へ育てる事業スタジオです。</p>
-  </section>
-
-  <section id="mission">
-    <h2>Mission / Vision</h2>
-    <div class="card">
-      <h3>Mission</h3>
-      <p>アイデアも、時間も、日々の営みも——まだ形になっていない可能性に輪郭を与え、育てていく。</p>
-      <h3>Vision</h3>
-      <p>「まだ形になっていない」というだけで、可能性を諦めない。そんな選択肢が当たり前にある社会をつくる。</p>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>アイデアを、<span class="accent">成果</span>まで。</h1>
+      <p class="lede">Bloomforge Groupは、小さなアイデアを実際に使われるプロダクト・事業へ育てる事業スタジオです。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#mission">Missionを見る →</a>
+        <a class="btn btn-ghost" href="#products">Productsを見る</a>
+      </div>
     </div>
-  </section>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#A7BFA6" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#A7BFA6" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F6A3A5" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#F6A3A5" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="230" cy="180" r="180" fill="url(#blob1)"/>
+        <circle cx="150" cy="260" r="130" fill="url(#blob2)"/>
+        <path d="M200 380 C190 300 210 240 200 160" stroke="#7E9A7D" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M200 320 C220 310 235 290 230 270 C210 275 195 295 200 320Z" fill="#A7BFA6"/>
+        <path d="M198 260 C178 250 163 230 168 210 C188 215 203 235 198 260Z" fill="#A7BFA6" opacity="0.85"/>
+        <path d="M202 200 C222 192 235 174 228 156 C210 160 197 178 202 200Z" fill="#A7BFA6" opacity="0.7"/>
+        <g transform="translate(200,120)">
+          <circle cx="-18" cy="-4" r="22" fill="#F6A3A5" opacity="0.85"/>
+          <circle cx="14" cy="-14" r="24" fill="#F05F62" opacity="0.9"/>
+          <circle cx="18" cy="14" r="20" fill="#F6A3A5" opacity="0.8"/>
+          <circle cx="-10" cy="20" r="18" fill="#D9A45B" opacity="0.55"/>
+          <circle cx="2" cy="2" r="12" fill="#FFF8F3"/>
+        </g>
+        <path d="M255 90 C260 78 252 68 244 64 C248 76 240 82 240 92 C240 100 248 104 255 100 C258 96 258 92 255 90Z" fill="#D9A45B" opacity="0.85"/>
+        <circle cx="90" cy="90" r="3" fill="#F05F62" opacity="0.5"/>
+        <circle cx="320" cy="260" r="4" fill="#A7BFA6" opacity="0.5"/>
+        <circle cx="70" cy="220" r="2.5" fill="#D9A45B" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+</section>
 
-  <section id="products">
-    <h2>Products</h2>
+<section id="mission" class="band-pink">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">
+        <svg class="mark" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 18C10 10 4 8 2 2c8 0 12 6 8 16z"/></svg>
+        Mission &amp; Vision
+      </span>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-block">
+        <p class="statement">アイデアも、時間も、日々の営みも——まだ形になっていない可能性に輪郭を与え、育てていく。</p>
+      </div>
+      <div class="divider" aria-hidden="true">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 18C10 10 4 8 2 2c8 0 12 6 8 16z"/></svg>
+        <span class="line"></span>
+      </div>
+      <div class="mv-block">
+        <p class="statement">「まだ形になっていない」というだけで、可能性を諦めない。そんな選択肢が当たり前にある社会をつくる。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="card product">
-      <h3>Florafolio</h3>
-      <p>時間の使い方を、カテゴリごとの植物として育てていくiPhoneアプリ。日々の選択の積み重ねを、目に見える形で残していくためのプロダクトです。</p>
-      <div class="hero-links">
-        <a href="/support">サポートページ</a>
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">
+        <svg class="mark" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="3"/><circle cx="10" cy="3" r="2"/><circle cx="17" cy="10" r="2"/><circle cx="10" cy="17" r="2"/><circle cx="3" cy="10" r="2"/></svg>
+        Products
+      </span>
+      <h2 class="section-title">育てているプロダクト</h2>
+      <p class="lede">Bloomforge Groupが、日々の暮らしや仕事のために育てているプロダクトです。</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-visual p-flora" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#7E9A7D" stroke-width="2.2" stroke-linecap="round">
+            <path d="M50 84V44"/>
+            <path d="M50 44c0-9 8-13 16-11-3 9-9 13-16 11z"/>
+            <path d="M50 58c0-9-8-13-16-11 3 9 9 13 16 11z"/>
+            <path d="M50 30c0-6 5-10 11-9-2 6-6 10-11 9z"/>
+            <circle cx="50" cy="86" r="2.4" fill="#D9A45B" stroke="none"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>Florafolio</h3>
+          <p class="ruby">フローラフォリオ</p>
+          <p>予定や時間の使い方を、カテゴリごとの植物の成長として可視化するライフログアプリ。カレンダーと連携し、仕事・趣味・休息などに使った時間を「管理」ではなく「育てる」感覚で振り返れます。</p>
+          <div class="product-links">
+            <a class="chip-link" href="/support">サポートページ →</a>
+            <a class="chip-link" href="/privacy">プライバシーポリシー →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual p-kit" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#4C3A33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="26" y="26" width="20" height="20" rx="3"/>
+            <rect x="54" y="26" width="20" height="20" rx="3"/>
+            <rect x="26" y="54" width="20" height="20" rx="3"/>
+            <rect x="54" y="54" width="20" height="20" rx="3" stroke="#F05F62"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>AI Company Starter Kit</h3>
+          <p class="ruby">エーアイ・カンパニー・スターターキット</p>
+          <p>Claude Codeで複数プロジェクトを運用していると、毎回同じ運用ルールを説明し直す羽目になります。承認ルール・意思決定記録・報告フォーマットを一式にまとめ、その手間をなくすテンプレートキットです。</p>
+          <div class="product-links">
+            <a class="chip-link" href="https://bloomforgelab.gumroad.com/l/ai-company-starter-kit?utm_source=website&amp;utm_medium=referral&amp;utm_campaign=bloomforge_site">詳しく見る（Gumroad） →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="band-sage">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">
+        <svg class="mark" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 18C10 10 4 8 2 2c8 0 12 6 8 16z"/></svg>
+        Values
+      </span>
+      <h2 class="section-title">大切にしていること</h2>
+      <p class="lede">Bloomforge Groupが、事業やプロダクトについて迷ったときに立ち返る4つの原則です。</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 30 30" fill="none" stroke-width="1.8">
+            <circle cx="12" cy="15" r="9"/>
+            <circle cx="19" cy="15" r="4" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <p class="en">Think unlimited, execute limited.</p>
+        <p class="jp">可能性は無限に、実行は絞る。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 30 30" fill="none" stroke-width="1.8" stroke-linecap="round">
+            <path d="M15 24V13"/>
+            <path d="M15 13c0-3 3-4 5-3-1 3-3 4-5 3z" fill="currentColor" stroke="none" opacity="0.85"/>
+            <path d="M15 16c0-3-3-4-5-3 1 3 3 4 5 3z" fill="currentColor" stroke="none" opacity="0.6"/>
+            <circle cx="15" cy="25" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <p class="en">小さく試し、</p>
+        <p class="jp">育てながら形にする。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="21.5" cy="15" r="3.2"/>
+            <circle cx="17" cy="21.2" r="3.2"/>
+            <circle cx="9.7" cy="18.8" r="3.2"/>
+            <circle cx="9.7" cy="11.2" r="3.2"/>
+            <circle cx="17" cy="8.8" r="3.2"/>
+            <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <p class="en">作ることをゴールにしない。</p>
+        <p class="jp">使われて、はじめてBloom。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M15 25V15"/>
+            <path d="M15 15L15 5" stroke-dasharray="1.5,2.5" opacity="0.4"/>
+            <path d="M15 15L22 8"/>
+            <circle cx="15" cy="15" r="1.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <p class="en">方向修正は失敗ではなく、</p>
+        <p class="jp">学びの証。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="company" class="company-section">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">
+        <svg class="mark" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 18C10 10 4 8 2 2c8 0 12 6 8 16z"/></svg>
+        Company
+      </span>
+    </div>
+    <div class="company-card">
+      <svg class="botanical-corner" viewBox="0 0 160 160" aria-hidden="true">
+        <path d="M160 160C120 160 80 130 90 90C130 100 160 120 160 160Z" fill="#A7BFA6" opacity="0.35"/>
+        <path d="M160 160C140 130 130 100 150 70C165 100 170 130 160 160Z" fill="#F6A3A5" opacity="0.3"/>
+      </svg>
+      <p><strong>Bloomforge Group</strong>（ブルームフォージ・グループ）は、日本を拠点に、複数のプロダクト・事業を育てる事業スタジオです。</p>
+      <p>アイデアも、時間も、日々の営みも——まだ形になっていない可能性に輪郭を与え、育てていく。それがBloomforge Groupの取り組みです。現在は法人化前の段階で運営しています。</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-band">
+      <h2>一緒に、可能性を育てませんか</h2>
+      <p>ご質問・お問い合わせはこちらから。</p>
+      <a class="btn btn-primary" href="mailto:contact@bloomforge.jp">contact@bloomforge.jp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="/">
+          <img src="/assets/logo.png" alt="" class="brand-mark">
+          <span class="brand-name">Bloomforge Group</span>
+        </a>
+        <p class="footer-tagline">アイデアに火を灯し、未来の花を咲かせる。</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#mission">Mission</a>
+        <a href="#products">Products</a>
+        <a href="#approach">Values</a>
+        <a href="#company">Company</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="/support">Florafolio サポート</a>
+        <a href="https://bloomforgelab.gumroad.com/l/ai-company-starter-kit?utm_source=website&amp;utm_medium=referral&amp;utm_campaign=bloomforge_site">AI Company Starter Kit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal &amp; Contact</h4>
         <a href="/privacy">プライバシーポリシー</a>
+        <a href="mailto:contact@bloomforge.jp">お問い合わせ</a>
       </div>
     </div>
+    <div class="footer-bottom">© 2026 Bloomforge Group</div>
+  </div>
+</footer>
 
-    <div class="card product">
-      <h3>AI Company Starter Kit</h3>
-      <p>複数のプロジェクトを運用する開発者向けに、承認ルール・意思決定記録・報告フォーマットを一式にまとめたテンプレートキット。プロジェクトを立ち上げるたびに運用ルールを一から考え直す手間をなくします。</p>
-      <div class="hero-links">
-        <a href="https://bloomforgelab.gumroad.com/l/ai-company-starter-kit?utm_source=website&amp;utm_medium=referral&amp;utm_campaign=bloomforge_site">詳しく見る（Gumroad）</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="approach">
-    <h2>Values</h2>
-    <div class="card">
-      <ul>
-        <li>Think unlimited, execute limited.<br>可能性は無限に、実行は絞る。</li>
-        <li>小さく試し、育てながら形にする。</li>
-        <li>作ることをゴールにしない。使われて、はじめてBloom。</li>
-        <li>方向修正は失敗ではなく、学びの証。</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="company">
-    <h2>Company</h2>
-    <div class="card">
-      <p><strong>Bloomforge Group</strong>（ブルームフォージ・グループ）</p>
-      <p>日本を拠点に、複数のプロダクト・事業を育てる事業スタジオとして活動しています。現在は法人化前の段階で運営しています。</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="hero-links">
-      <a href="mailto:contact@bloomforge.jp">contact@bloomforge.jp</a>
-    </div>
-  </section>
-
-  <footer class="site">
-    &copy; 2026 Bloomforge Group
-  </footer>
-</div>
 </body>
 </html>
