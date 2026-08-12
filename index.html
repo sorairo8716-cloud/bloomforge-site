@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bloomforge Group</title>
 <meta name="description" content="Bloomforge Groupは、アイデアも時間も日々の営みも、まだ形になっていない可能性に輪郭を与え、育てていく事業スタジオです。Florafolio・AI Company Starter Kit等のプロダクトを開発・提供しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/assets/logo.png">
 </head>
@@ -12,9 +15,9 @@
 
 <header class="site">
   <div class="bar">
-    <a class="brand" href="/">
-      <img src="/assets/logo.png" alt="" class="brand-mark">
-      <span class="brand-name">Bloomforge Group</span>
+    <a class="brand" href="/" aria-label="Bloomforge Group">
+      <img src="/assets/logo-wordmark.png" alt="Bloomforge Group" class="brand-wordmark">
+      <img src="/assets/logo.png" alt="Bloomforge Group" class="brand-icon-only">
     </a>
     <nav class="site">
       <a href="#mission">Mission</a>
@@ -36,6 +39,7 @@
         <a class="btn btn-ghost" href="#products">Productsを見る</a>
       </div>
     </div>
+    <!-- Hero Illustrationは暫定Draft（CEO正式Visual Asset受領後に差し替え予定）。.hero-art内のsvgのみ差し替えれば良い構造 -->
     <div class="hero-art" aria-hidden="true">
       <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -108,6 +112,7 @@
 
     <div class="products-grid">
       <div class="product-card">
+        <!-- Product Illustrationは暫定Draft（CEO正式Visual Asset受領後に差し替え予定） -->
         <div class="product-visual p-flora" aria-hidden="true">
           <svg viewBox="0 0 100 100" fill="none" stroke="#7E9A7D" stroke-width="2.2" stroke-linecap="round">
             <path d="M50 84V44"/>
@@ -161,6 +166,7 @@
       <p class="lede">Bloomforge Groupが、事業やプロダクトについて迷ったときに立ち返る4つの原則です。</p>
     </div>
 
+    <!-- Values アイコンは暫定Illustration（Draft/Placeholder）。CEOの正式Visual Asset受領後に差し替え予定。#value-icon 内のsvgのみ差し替えれば良い構造 -->
     <div class="values-grid">
       <div class="value-card">
         <div class="value-icon">
@@ -169,8 +175,8 @@
             <circle cx="19" cy="15" r="4" fill="currentColor" stroke="none"/>
           </svg>
         </div>
-        <p class="en">Think unlimited, execute limited.</p>
-        <p class="jp">可能性は無限に、実行は絞る。</p>
+        <p class="value-lead" lang="en">Think unlimited, execute limited.</p>
+        <p class="value-sub">可能性は無限に、実行は絞る。</p>
       </div>
       <div class="value-card">
         <div class="value-icon">
@@ -181,8 +187,8 @@
             <circle cx="15" cy="25" r="1.5" fill="currentColor" stroke="none"/>
           </svg>
         </div>
-        <p class="en">小さく試し、</p>
-        <p class="jp">育てながら形にする。</p>
+        <p class="value-lead">小さく試し、</p>
+        <p class="value-sub">育てながら形にする。</p>
       </div>
       <div class="value-card">
         <div class="value-icon">
@@ -195,8 +201,8 @@
             <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none"/>
           </svg>
         </div>
-        <p class="en">作ることをゴールにしない。</p>
-        <p class="jp">使われて、はじめてBloom。</p>
+        <p class="value-lead">作ることをゴールにしない。</p>
+        <p class="value-sub">使われて、はじめてBloom。</p>
       </div>
       <div class="value-card">
         <div class="value-icon">
@@ -207,8 +213,8 @@
             <circle cx="15" cy="15" r="1.8" fill="currentColor" stroke="none"/>
           </svg>
         </div>
-        <p class="en">方向修正は失敗ではなく、</p>
-        <p class="jp">学びの証。</p>
+        <p class="value-lead">方向修正は失敗ではなく、</p>
+        <p class="value-sub">学びの証。</p>
       </div>
     </div>
   </div>
@@ -248,9 +254,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="footer-brand" href="/">
-          <img src="/assets/logo.png" alt="" class="brand-mark">
-          <span class="brand-name">Bloomforge Group</span>
+        <a class="footer-brand" href="/" aria-label="Bloomforge Group">
+          <img src="/assets/logo-wordmark.png" alt="Bloomforge Group" class="brand-wordmark">
         </a>
         <p class="footer-tagline">アイデアに火を灯し、未来の花を咲かせる。</p>
       </div>
