@@ -18,13 +18,41 @@
       <img src="/assets/logo-wordmark.png" alt="Bloomforge Group" class="brand-wordmark">
       <img src="/assets/logo.png" alt="Bloomforge Group" class="brand-icon-only">
     </a>
-    <nav class="site">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site" id="site-nav">
       <a href="/">Home</a>
       <a href="/support">サポート</a>
       <a href="/privacy">プライバシーポリシー</a>
     </nav>
   </div>
 </header>
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+  function closeNav() {
+    nav.classList.remove('is-open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'メニューを開く');
+  }
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { closeNav(); btn.focus(); }
+  });
+})();
+</script>
 <div class="wrap narrow legacy-page">
 
   <h1>Florafolio プライバシーポリシー</h1>
