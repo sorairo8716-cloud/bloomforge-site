@@ -8,12 +8,13 @@
   --ivory: #FFF8F3;
   --ivory-deep: #FDF1E7;
   --coral: #F05F62;
+  --coral-text: #C43F43; /* Bloom Coralの濃色調整版。小さいテキスト・白文字背景でWCAG AA(4.5:1)を満たすために使用。公式Bloom Coral(#F05F62)自体は背景・大きな要素・アイコンで維持 */
   --coral-deep: #D94A4E;
   --pink: #F6A3A5;
   --sage: #A7BFA6;
   --sage-deep: #7E9A7D;
   --brown: #4C3A33;
-  --brown-soft: #8A7268;
+  --brown-soft: #6B5449;
   --gold: #D9A45B;
   --surface: #ffffff;
   --border: #EFDFD3;
@@ -60,15 +61,20 @@ h1, h2, h3, .serif {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--coral);
+  color: var(--coral-text);
   margin-bottom: 0.9rem;
 }
 .eyebrow .mark { width: 16px; height: 16px; flex: none; }
 
-a { color: var(--coral); }
+a { color: var(--coral-text); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
 
 img { max-width: 100%; display: block; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
 .narrow { max-width: 760px; margin: 0 auto; }
@@ -173,7 +179,7 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
 .product-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
 .chip-link {
   display: inline-flex; align-items: center; gap: 0.35rem;
-  font-size: 0.86rem; font-weight: 600; color: var(--coral); text-decoration: none;
+  font-size: 0.86rem; font-weight: 600; color: var(--coral-text); text-decoration: none;
 }
 .chip-link:hover { color: var(--coral-deep); }
 
@@ -201,13 +207,15 @@ h2.section-title { font-size: 1.9rem; margin: 0 0 1rem; }
 
 /* ---------- Contact CTA band ---------- */
 .contact-band {
-  background: linear-gradient(135deg, var(--coral) 0%, #E5686B 100%);
+  /* coral-textベース：白文字とのコントラストをWCAG AA(4.5:1)以上確保するため、
+     公式Bloom Coral(#F05F62)よりわずかに濃いグラデーションを使用 */
+  background: linear-gradient(135deg, var(--coral-text) 0%, #B8383C 100%);
   color: #fff; text-align: center; padding: 4rem 1.5rem; border-radius: 28px;
   margin: 0 auto; max-width: 1080px;
 }
 .contact-band h2 { color: #fff; margin: 0 0 0.6rem; font-size: 1.8rem; }
 .contact-band p { color: rgba(255,255,255,0.92); margin: 0 0 1.8rem; }
-.contact-band .btn-primary { background: #fff; color: var(--coral-deep); box-shadow: none; }
+.contact-band .btn-primary { background: #fff; color: var(--coral-text); box-shadow: none; }
 .contact-band .btn-primary:hover { background: var(--ivory); }
 
 /* ---------- Footer ---------- */
