@@ -62,3 +62,19 @@ CEO指示「Bloomforge Group Corporate Website ビジュアル全面リデザイ
 - `/support`・`/privacy`のヘッダー/フッターを新デザインへ統一（法的文言・Q&A本文は無変更、diff確認済み）
 - Accessibility：コントラスト比WCAG AA未達箇所（brown-soft・coral系リンク・Contact
   バンド）を再調整して解消。Mission/Companyセクションにsr-only h2を追加し見出し構造を修正
+
+
+## Wordmark・Typography System追加修正（2026-08-12 第3回）
+
+CEO指示「Corporate Website追加デザイン指示」対応。
+
+- Header/Footerのブランド表記を、アイコン+テキストから正式横長ワードマーク（透明背景版、
+  `assets/logo-wordmark.png`）へ変更。CSS/Web Fontでの再現はしていない
+- 極小幅端末（360px以下）のみ、正式ロゴマーク単体（`assets/logo.png`）へ切替する
+  フォールバックを追加
+- Typography Systemを導入：英字Hero/Section Heading=Cormorant Garamond、日本語Hero/
+  Mission/Vision等の大きなブランドコピー=Noto Serif JP、本文/Navigation/Button/Product
+  Description/UI=Noto Sans JP（Google Fonts、`font-display: swap`・`preconnect`で
+  Performance配慮）
+- Hero・Products・Values用の新規SVG Illustrationは、CEOによる正式Visual Asset差し替えを
+  前提とした暫定Draftである旨をHTMLコメントで明記（正式Brand Assetとしては未確定のまま）
