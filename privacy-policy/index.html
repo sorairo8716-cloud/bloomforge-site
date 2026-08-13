@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー | Bloomforge Group</title>
+<meta name="description" content="Bloomforge Group公式サイト（bloomforge.jp）のプライバシーポリシー。当サイトが取得する情報とその取り扱いについて説明します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=20260812f">
+<link rel="icon" href="/assets/logo.png">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="/" aria-label="Bloomforge Group">
+      <img src="/assets/logo-wordmark.png" alt="Bloomforge Group" class="brand-wordmark">
+      <img src="/assets/logo.png" alt="Bloomforge Group" class="brand-icon-only">
+    </a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="site" id="site-nav">
+      <a href="/">Home</a>
+      <a href="/support">Florafolio サポート</a>
+      <a href="/privacy-policy">プライバシーポリシー</a>
+    </nav>
+  </div>
+</header>
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+  function closeNav() {
+    nav.classList.remove('is-open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'メニューを開く');
+  }
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { closeNav(); btn.focus(); }
+  });
+})();
+</script>
+<div class="wrap narrow legacy-page">
+
+  <h1>Bloomforge Group プライバシーポリシー</h1>
+  <p class="meta">最終更新日：2026年8月13日</p>
+
+  <p>Bloomforge Group（以下「当グループ」）は、公式サイト（bloomforge.jp、以下「当サイト」）における、訪問者に関する情報の取り扱いについて、本ポリシーで説明します。</p>
+
+  <p>当グループが提供する個別のプロダクトについては、それぞれ専用のプライバシーポリシーを設けています。<a href="/privacy">Florafolioのプライバシーポリシーはこちら</a>。</p>
+
+  <h2>1. 当サイトが取得する情報</h2>
+  <p>当サイトは静的なWebサイトであり、閲覧にあたって会員登録・ログイン・フォーム入力等は必要ありません。</p>
+  <ul>
+    <li>当グループ自身では、Cookie・アクセス解析ツール（Google Analytics等）・広告配信タグ等を用いた訪問者のトラッキングは行っていません。</li>
+    <li>ただし、当サイトのホスティング事業者（GitHub, Inc.が提供するGitHub Pages）が、サービス提供・セキュリティ維持等の目的で、訪問者のIPアドレス等のアクセス情報を処理する場合があります。詳細は<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHubのプライバシーステートメント</a>をご確認ください。</li>
+    <li>「お問い合わせ」リンクは、お使いのメールソフトを起動するmailtoリンクです。当サイト自体がフォーム入力内容を受信・保存することはありません（送信されたメールは、通常のメールと同様に当グループが受信します）。</li>
+  </ul>
+
+  <h2>2. 外部サービスへのリンクについて</h2>
+  <p>当サイトには、以下の外部サービスへのリンクがあります。リンク先のサービスでは、それぞれ独自のプライバシーポリシーが適用されます。</p>
+  <ul>
+    <li>App Store（Florafolioのダウンロードページ）</li>
+    <li>Gumroad（AI Company Starter Kitの販売ページ）</li>
+  </ul>
+  <p>これらのリンク先での情報の取り扱いについては、当サイトの本ポリシーの対象外です。各サービスのプライバシーポリシーをご確認ください。</p>
+
+  <h2>3. 第三者提供</h2>
+  <p>当グループは、当サイトの閲覧に関連して取得した情報を、第三者に提供・販売しません（上記1.のホスティング事業者による処理を除き、当グループ自身が訪問者を識別する情報を収集する仕組みは設けていません）。</p>
+
+  <h2>4. 本ポリシーの変更について</h2>
+  <p>当サイトの機能追加・変更（将来的なアクセス解析導入等）に伴い、本ポリシーの内容を変更する場合があります。重要な変更がある場合は、本ページにてお知らせします。</p>
+
+  <h2>5. お問い合わせ</h2>
+  <p>本ポリシーに関するお問い合わせは、<a href="mailto:contact@bloomforge.jp">contact@bloomforge.jp</a>までご連絡ください。</p>
+
+  <div class="footer-bottom" style="margin-top:3rem">&copy; 2026 Bloomforge Group ／ <a href="mailto:contact@bloomforge.jp">お問い合わせ</a></div>
+</div>
+</body>
+</html>
