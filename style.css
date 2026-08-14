@@ -611,3 +611,17 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
 
 /* アンカー遷移時に見出しがsticky headerへ隠れないようにする（実機QAで発見） */
 .rb-sec, .rb-hero{ scroll-margin-top: 6.5rem; }
+
+/* Hero直下の商品名一覧を削除したため（2026-08-14 CEO指示）、
+   サブコピーとCTAの間隔を、以前「つくっているもの」が担っていたリズムへ戻す。 */
+.rb-cta{ margin-top: clamp(2.4rem, 6vw, 3.6rem); }
+
+/* Productsは情報カテゴリ／ナビゲーションラベルとして機能させるため、
+   他セクションの「英字eyebrow＋日本語見出し」ではなく英字見出し1本にする（2026-08-14 CEO指示2）。
+   思想の一行「日々の引っかかりから、つくったもの。」は導入文の先頭へ移した。 */
+.rb-h2-latin{
+  font-family: var(--font-en-serif);
+  font-weight: 400;
+  letter-spacing: .02em;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+}
