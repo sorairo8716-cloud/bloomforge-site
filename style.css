@@ -552,3 +552,62 @@ footer.site { padding: 4rem 0 2.5rem; border-top: 1px solid var(--border); margi
 @media (prefers-reduced-motion: reduce){
   .rb-btn{ transition: none; }
 }
+
+/* ---- Rebrand QA修正（2026-08-14、iOSシミュレータ実機確認の結果） ---- */
+
+/* [1] Dark時のBloom Coralがコントラスト不足だった。
+   --coral-text(#C43F43) を暗い地(#201613)に載せると約2.6:1でWCAG AA(4.5:1)未満。
+   ヒーローで最も重要な語「あなた」が沈むため、Dark時のみ明るい調整版へ。
+   ※この不足は現行の公開サイトにも存在していた（リンク色も同じ変数を使用）。 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --coral-text: #FF8285; /* on #201613 ≈ 7.5:1 */
+    --coral-deep: #FF9A9C;
+  }
+}
+
+@media (max-width: 860px) {
+  /* [2] サブコピーが「増や／す。」のように句点だけ次行へ落ちていた。
+     明示的な改行位置を与え、孤立文字を作らない。 */
+  .rb-sub{ text-wrap: pretty; }
+
+  /* [3] 「つくっているもの」が折り返してラベルと項目の対応が崩れていた。
+     モバイルでは1項目1行に積む。 */
+  .rb-what{ flex-direction: column; gap: .35rem; }
+
+  /* [4] CTAが縦積みになった際、2つのボタンの幅が不揃いで雑に見えた。 */
+  .rb-cta{ flex-direction: column; align-items: stretch; }
+  .rb-btn{ text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .rb-sub{ font-size: .95rem; line-height: 1.95; }
+}
+
+/* ---- Purpose / Values / Operating Principles の3階層（2026-08-14 CEO指示3・4・5） ---- */
+
+/* Purpose → Values をつなぐ思想コピー。Valuesの定義そのものではない（CEO指示5）。 */
+.rb-bridge{
+  font-family: var(--font-jp-serif);
+  font-size: clamp(1.15rem, 3.2vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--coral-text);
+  margin: 0 0 .9rem;
+}
+
+.rb-val-name{
+  font-family: var(--font-jp-serif);
+  font-size: clamp(1.05rem, 2.9vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0;
+}
+.rb-vals-wide li{ font-family: var(--font-sans); font-size: 1rem; }
+.rb-vals .rb-n{ max-width: var(--rb-measure); }
+
+@media (min-width: 53.75rem){
+  /* 説明文を持つValuesは2カラムだと窮屈なため1カラムへ戻す */
+  .rb-vals-wide{ display: block; }
+}
+
+/* アンカー遷移時に見出しがsticky headerへ隠れないようにする（実機QAで発見） */
+.rb-sec, .rb-hero{ scroll-margin-top: 6.5rem; }
