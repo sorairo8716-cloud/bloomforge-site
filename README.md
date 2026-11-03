@@ -74,7 +74,10 @@ CEO指示「Corporate Website追加デザイン指示」対応。
   フォールバックを追加
 - Typography Systemを導入：英字Hero/Section Heading=Cormorant Garamond、日本語Hero/
   Mission/Vision等の大きなブランドコピー=Noto Serif JP、本文/Navigation/Button/Product
-  Description/UI=Noto Sans JP（Google Fonts、`font-display: swap`・`preconnect`で
-  Performance配慮）
+  Description/UI=Noto Sans JP（**2026-11-03に自前ホストへ変更**：Google Fontsの外部読込は
+  廃止し、`assets/fonts/` の woff2 を `style.css` の `@font-face`＋`font-display: swap` で配信。
+  3書体はSIL OFL 1.1で、ライセンス文・著作権表示・由来は `assets/fonts/` に同梱。
+  文言を足したときは、CEO Office の `it-operations/scripts/build_site_fonts.py` を再実行して
+  新しい文字を含める）
 - Hero・Products・Values用の新規SVG Illustrationは、CEOによる正式Visual Asset差し替えを
   前提とした暫定Draftである旨をHTMLコメントで明記（正式Brand Assetとしては未確定のまま）
