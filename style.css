@@ -6,6 +6,29 @@
    Floria/Footer）をProductionへ反映。Values専用Visualは正式Asset未着（Pending）。
    ========================================================================== */
 
+/* ==========================================================================
+   自前ホストのフォント（2026-11-03：Google Fontsの外部読込をやめ、同じ3書体を当サイトから配信）
+   Cormorant Garamond（© 2015 The Cormorant Project Authors）／Noto Serif JP（© 2017-2024 Adobe）／
+   Noto Sans JP（© 2014-2021 Adobe）。いずれも SIL Open Font License 1.1。ライセンス文＝/assets/fonts/ の OFL-*.txt、由来＝/assets/fonts/README.txt。
+   使う文字に絞ったサブセット（woff2）。文言を足したら、含まれない文字は下の font-family の次の書体で表示される。
+   ========================================================================== */
+@font-face {
+  font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("/assets/fonts/cormorant-garamond.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap;
+  src: url("/assets/fonts/cormorant-garamond-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Serif JP"; font-style: normal; font-weight: 500 700; font-display: swap;
+  src: url("/assets/fonts/noto-serif-jp.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Sans JP"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("/assets/fonts/noto-sans-jp.woff2") format("woff2");
+}
+
 :root {
   --ivory: #FFF8F3;
   --ivory-deep: #FDF1E7;
