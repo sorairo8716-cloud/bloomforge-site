@@ -1,0 +1,10 @@
+# GitHub Pages(Jekyll)の設定。公開しないファイルを除外する。
+# 2026-11-04: README.md・CLAUDE.md（社内向け文書）がWebページとして公開されていたため除外。
+# index.html・privacy-policy/ 等はfront matterが無く、そのまま静的ファイルとして配信される。
+exclude:
+  - README.md
+  - CLAUDE.md
+  - _config.yml
+  - .gitignore
+  - node_modules
+  - vendor

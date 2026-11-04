@@ -9,7 +9,7 @@ Bloomforge Group公式Webサイト。GitHub Pagesでホスティングし、`blo
 - `/privacy-policy` — 当サイトのプライバシーポリシー
 - `/assets/` — Bloomforge Group公式ロゴ（`shared/brand/`と同一素材のWeb最適化版）・自前ホストのフォント
 - 公開サイトにFlorafolioの記載は無い（`/support`・`/privacy`は2026-11-04に削除。以下の履歴は当時の記録として残す）
-- `.nojekyll` を置き、README・CLAUDE等のMarkdownをWebページとして公開しない（2026-11-04、公開確認で`/CLAUDE`が公開されていたため）
+- `_config.yml` の `exclude` で README.md・CLAUDE.md を公開対象から除外（2026-11-04、公開確認で`/CLAUDE`が公開されていたため）。**`.nojekyll` は使わない**（使うと全ファイルが生のまま公開され、`/CLAUDE.md`・`/README.md`が取得できてしまう。2026-11-04に実際に発生し同日に是正）
 - 販売は Gumroad で完結する。サイトは運営者情報と販売ページへの着地先のみ（更新・月次レビューの対象外）
 
 デザイン方針・掲載可否の判断根拠は`ceo-office`リポジトリの
