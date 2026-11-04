@@ -4,11 +4,13 @@ Bloomforge Group公式Webサイト。GitHub Pagesでホスティングし、`blo
 紐づけて公開する。2026-08-12、CEO指示「bloomforge.jpのSSL復旧およびBloomforge Group公式
 サイトへの刷新」により、個人開発の屋号ページからBloomforge Group公式サイトへ刷新した。
 
-現在の内容：
-- `/` — Bloomforge Groupのトップページ（Hero / What We Do / Products / Experiments / Links）
-- `/support` — Florafolioのサポートページ（変更なし、維持）
-- `/privacy` — Florafolioのプライバシーポリシー（変更なし、維持）
-- `/assets/` — Bloomforge Group公式ロゴ（`shared/brand/`と同一素材のWeb最適化版）
+現在の内容（2026-11-04、CEO指示によるB案＝最小構成への縮小後）：
+- `/` — Bloomforge Groupのトップページ（Hero / Products / Company / Contact）
+- `/privacy-policy` — 当サイトのプライバシーポリシー
+- `/assets/` — Bloomforge Group公式ロゴ（`shared/brand/`と同一素材のWeb最適化版）・自前ホストのフォント
+- 公開サイトにFlorafolioの記載は無い（`/support`・`/privacy`は2026-11-04に削除。以下の履歴は当時の記録として残す）
+- `.nojekyll` を置き、README・CLAUDE等のMarkdownをWebページとして公開しない（2026-11-04、公開確認で`/CLAUDE`が公開されていたため）
+- 販売は Gumroad で完結する。サイトは運営者情報と販売ページへの着地先のみ（更新・月次レビューの対象外）
 
 デザイン方針・掲載可否の判断根拠は`ceo-office`リポジトリの
 `business-development-office/x-account-launch-proposal-2026-08-12.md`および
